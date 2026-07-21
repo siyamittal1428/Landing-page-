@@ -53,28 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ----------------------------------------------------------------------
-       2. COUNTDOWN URGENCY TIMER FOR GOOGLE ADS CONVERSION
-       ---------------------------------------------------------------------- */
-    const timerElement = document.getElementById('timer');
-    if (timerElement) {
-        let totalSeconds = 9 * 60 + 45; // 09:45
-
-        setInterval(() => {
-            if (totalSeconds > 0) {
-                totalSeconds--;
-            } else {
-                totalSeconds = 12 * 60 + 30; // reset to 12:30
-            }
-
-            const minutes = Math.floor(totalSeconds / 60);
-            const seconds = totalSeconds % 60;
-            timerElement.textContent = 
-                `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        }, 1000);
-    }
-
-    /* ----------------------------------------------------------------------
-       3. CONSULTATION POPUP MODAL (As strictly requested)
+       2. CONSULTATION POPUP MODAL (As strictly requested)
        Tagline: "Get Consultation Today"
        Button 1: +91 7814794852
        Button 2: Whatsapp Us
@@ -119,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------------------
-       4. FAQ ACCORDION TOGGLE
+       3. FAQ ACCORDION TOGGLE
        ---------------------------------------------------------------------- */
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
@@ -133,47 +112,5 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('active');
         });
     });
-
-    /* ----------------------------------------------------------------------
-       5. LIVE RECENT BOOKING NOTIFICATION TOAST
-       ---------------------------------------------------------------------- */
-    const toast = document.getElementById('liveToast');
-    const toastName = document.getElementById('toastName');
-    const toastAction = document.getElementById('toastAction');
-    const toastTime = document.getElementById('toastTime');
-
-    const recentBookings = [
-        { name: "Pooja Sharma (Delhi)", action: "booked a Vastu Consultation", time: "2 mins ago" },
-        { name: "Vikram Malhotra (Mumbai)", action: "booked Kundali Reading", time: "4 mins ago" },
-        { name: "Ananya Mittal (Chandigarh)", action: "booked Tarot Card Reading", time: "1 min ago" },
-        { name: "Rajesh Singhania (Jaipur)", action: "booked Commercial Vastu Audit", time: "5 mins ago" },
-        { name: "Sujata Verma (Bengaluru)", action: "booked Love Compatibility Reading", time: "3 mins ago" },
-        { name: "Deepak Patel (Ahmedabad)", action: "booked Gemstone Consultation", time: "6 mins ago" }
-    ];
-
-    let toastIndex = 0;
-
-    function showNextToast() {
-        if (!toast || !toastName) return;
-
-        const booking = recentBookings[toastIndex];
-        toastName.textContent = booking.name;
-        toastAction.textContent = booking.action;
-        toastTime.textContent = booking.time;
-
-        toast.classList.add('show');
-
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 4500);
-
-        toastIndex = (toastIndex + 1) % recentBookings.length;
-    }
-
-    // Trigger first toast after 8 seconds, then every 15 seconds
-    setTimeout(() => {
-        showNextToast();
-        setInterval(showNextToast, 15000);
-    }, 8000);
 
 });
