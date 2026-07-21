@@ -113,4 +113,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ----------------------------------------------------------------------
+       4. HERO CONSULTATION FORM WHATSAPP SUBMISSION
+       ---------------------------------------------------------------------- */
+    const heroForm = document.getElementById('heroWhatsappForm');
+    if (heroForm) {
+        heroForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const service = document.getElementById('formService').value;
+            const problem = document.getElementById('formProblem').value.trim();
+
+            const message = `*Consultation Request - Hidden Oracle*%0A%0A` +
+                            `👤 *Name:* ${encodeURIComponent(name)}%0A` +
+                            `📞 *Phone:* ${encodeURIComponent(phone)}%0A` +
+                            `🔮 *Service:* ${encodeURIComponent(service)}%0A` +
+                            `📝 *Problem/Question:* ${encodeURIComponent(problem)}%0A%0A` +
+                            `Hi Astrologer Siya Mittal, please provide guidance for my issue.`;
+
+            const whatsappUrl = `https://wa.me/917814794852?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
 });

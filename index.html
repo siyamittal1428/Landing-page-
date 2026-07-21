@@ -62,11 +62,8 @@
 
         <div class="container hero-grid">
             <!-- Hero Text Column -->
+            <!-- Hero Text Column -->
             <div class="hero-content">
-                <div class="badge-trust-hero">
-                    <i class="fa-solid fa-om"></i> 100% Confidential & Accurate Spiritual Guidance
-                </div>
-                
                 <h1 class="hero-title">
                     Transform Your Life with Authentic <span class="gold-gradient-text">Indian Astrology & Vastu</span>
                 </h1>
@@ -117,13 +114,42 @@
                 </div>
             </div>
 
-            <!-- Hero Image / Visual Column -->
-            <div class="hero-visual">
-                <div class="divine-frame">
-                    <img src="images/hero_bg.png" alt="Lord Ganesha Indian Astrology Divine Image" class="hero-main-img">
-                    <div class="divine-badge-overlay">
-                        <i class="fa-solid fa-award"></i> Gold Medalist Astrologer
+            <!-- Hero Form Column (Replaces Lord Ganesha image) -->
+            <div class="hero-form-container">
+                <div class="hero-form-card">
+                    <div class="form-header">
+                        <h3><i class="fa-solid fa-om"></i> Book Consultation</h3>
+                        <p>Fill details to chat directly with <strong>Astrologer Siya Mittal</strong></p>
                     </div>
+                    <form id="heroWhatsappForm" class="hero-whatsapp-form">
+                        <div class="form-group">
+                            <label for="formName"><i class="fa-solid fa-user"></i> Full Name</label>
+                            <input type="text" id="formName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="formPhone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="formPhone" placeholder="Enter your 10-digit number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="formService"><i class="fa-solid fa-star"></i> Select Service</label>
+                            <select id="formService" required>
+                                <option value="Vedic Astrology Consultation">Vedic Astrology Consultation</option>
+                                <option value="Vastu Shastra Consultant">Vastu Shastra Consultant</option>
+                                <option value="Tarot Card Reading">Tarot Card Reading</option>
+                                <option value="Love & Marriage Solution">Love & Marriage Solution</option>
+                                <option value="Career & Business Growth">Career & Business Growth</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="formProblem"><i class="fa-solid fa-comment-dots"></i> Your Problem / Question</label>
+                            <textarea id="formProblem" rows="2" placeholder="Describe your problem briefly..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-neon btn-neon-form-submit">
+                            <i class="fa-brands fa-whatsapp icon-pulse"></i>
+                            <span>GET SOLUTION ON WHATSAPP</span>
+                        </button>
+                        <p class="form-privacy-note"><i class="fa-solid fa-lock"></i> 100% Confidential & Secure Consultation</p>
+                    </form>
                 </div>
             </div>
         </div>
